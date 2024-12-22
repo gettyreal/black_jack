@@ -1,0 +1,14 @@
+# Cartelle di build/output
+/target/
+/bin/
+/build/
+
+# File IDE (IntelliJ, Eclipse, VS Code)
+/.vscode/
+/.classpath
+/.settings/
+/.project
+
+# File Maven specifici
+dependency-reduced-pom.xml
+release.properties
