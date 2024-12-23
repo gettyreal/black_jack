@@ -8,7 +8,7 @@ public class Main {
         JFrame window = new JFrame(); // instantiate new frame
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // sets default operation
         window.setResizable(false); // set false to resisable window
-        window.setTitle("POKEMON FREED EDITION"); // sets title
+        window.setTitle("BLACK-JACK"); // sets title
 
         // add gamePanel alla finestra
         GamePanel gamePanel = new GamePanel(); // instantiate panel
