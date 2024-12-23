@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.RenderingHints;
 import java.io.IOException;
 import java.io.InputStream;
 import javax.swing.JPanel;
@@ -13,9 +14,13 @@ public class GamePanel extends JPanel implements Runnable, Colors{
     //input handlers
     public KeyHandler keyH = new KeyHandler();
 
+    //panel assets
+    public int maxWidht = 900;
+    public int maxHeight = 600;
+
     //game assets
     final int fps = 60;
-    Table table = new Table();
+    Table table = new Table(this);
 
     // game thread
     Thread gameThread; // for clock
@@ -31,7 +36,7 @@ public class GamePanel extends JPanel implements Runnable, Colors{
     }
 
     private void setPanelAttributes() {
-        this.setPreferredSize(new Dimension(900, 600));
+        this.setPreferredSize(new Dimension(maxWidht, maxHeight));
         this.setBackground(Colors.tableGreen);
         this.setDoubleBuffered(true);
         this.addKeyListener(keyH);
@@ -88,6 +93,8 @@ public class GamePanel extends JPanel implements Runnable, Colors{
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
         this.table.draw(g2);
     }
 }
