@@ -17,5 +17,7 @@ public class Main {
 
         window.setLocationRelativeTo(null); // set frame to midscreen
         window.setVisible(true); // set visible
+
+        gamePanel.startGameThread();
     }
 }
